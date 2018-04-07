@@ -12,6 +12,11 @@
 		04F71CF72078A1E200B693D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F71CF62078A1E200B693D6 /* Assets.xcassets */; };
 		04F71CFA2078A1E200B693D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F71CF82078A1E200B693D6 /* LaunchScreen.storyboard */; };
 		04F71D022078A68200B693D6 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F71D012078A68200B693D6 /* UIViewControllerExtensions.swift */; };
+		346230E730471986065CFA3A /* PostLoginOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34623ED2F10B2DB82166F283 /* PostLoginOperation.swift */; };
+		346231915DEFA12AF6D9E6D7 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346232C3CDAD43E90850DE0C /* Finder.swift */; };
+		34623CD8FF64D26ED141A48A /* LoginOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462387A088990A789000D3E /* LoginOperation.swift */; };
+		34623D6C96F340808B4AB470 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34623D6D3AA1F0FD5F9D662F /* DataExtensions.swift */; };
+		34623F70B20BCC1DB7EBE944 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346238AFC195BB86E6E78FAA /* Device.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		04F71CF92078A1E200B693D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04F71CFB2078A1E200B693D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F71D012078A68200B693D6 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		346232C3CDAD43E90850DE0C /* Finder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finder.swift; sourceTree = "<group>"; };
+		3462387A088990A789000D3E /* LoginOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOperation.swift; sourceTree = "<group>"; };
+		346238AFC195BB86E6E78FAA /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		34623D6D3AA1F0FD5F9D662F /* DataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
+		34623ED2F10B2DB82166F283 /* PostLoginOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostLoginOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +70,21 @@
 				04F71CF82078A1E200B693D6 /* LaunchScreen.storyboard */,
 				04F71CFB2078A1E200B693D6 /* Info.plist */,
 				04F71D012078A68200B693D6 /* UIViewControllerExtensions.swift */,
+				34623E72BF059440EC49C8AC /* Networking */,
+				34623D6D3AA1F0FD5F9D662F /* DataExtensions.swift */,
+				346238AFC195BB86E6E78FAA /* Device.swift */,
 			);
 			path = Finder;
+			sourceTree = "<group>";
+		};
+		34623E72BF059440EC49C8AC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				346232C3CDAD43E90850DE0C /* Finder.swift */,
+				3462387A088990A789000D3E /* LoginOperation.swift */,
+				34623ED2F10B2DB82166F283 /* PostLoginOperation.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +160,11 @@
 				04F71CF22078A1DD00B693D6 /* AppViewController.swift in Sources */,
 				04F71D022078A68200B693D6 /* UIViewControllerExtensions.swift in Sources */,
 				04F71CF02078A1DD00B693D6 /* AppDelegate.swift in Sources */,
+				346231915DEFA12AF6D9E6D7 /* Finder.swift in Sources */,
+				34623CD8FF64D26ED141A48A /* LoginOperation.swift in Sources */,
+				34623D6C96F340808B4AB470 /* DataExtensions.swift in Sources */,
+				34623F70B20BCC1DB7EBE944 /* Device.swift in Sources */,
+				346230E730471986065CFA3A /* PostLoginOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
