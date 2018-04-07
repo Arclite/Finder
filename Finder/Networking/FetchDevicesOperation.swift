@@ -3,7 +3,7 @@
 
 import Foundation
 
-class PostLoginOperation: Operation, URLSessionDataDelegate {
+class FetchDevicesOperation: Operation, URLSessionDataDelegate {
     // return value
     private(set) var devices: [Device]?
 
@@ -17,22 +17,10 @@ class PostLoginOperation: Operation, URLSessionDataDelegate {
         localSessionTask?.resume()
     }
 
-    // MARK: Login Values
-
-    var appleID: String {
-        guard let appleID = ProcessInfo.processInfo.environment["FINDER_APPLE_ID"] else { fatalError("Please provide your Apple ID with the environment variable 'FINDER_APPLE_ID'.") }
-        return appleID
-    }
-
-    var password: String {
-        guard let password = ProcessInfo.processInfo.environment["FINDER_PASSWORD"] else { fatalError("Please provide your Apple ID with the environment variable 'FINDER_PASSWORD'.") }
-        return password
-    }
-
     // MARK: URL Request
 
     private var url: URL {
-        guard let serviceURL = URL(string: "/fmipservice/client/web/initClient", relativeTo: baseURL) else { fatalError("Couldn't create findme service URL") }
+        guard let serviceURL = URL(string: "/fmipservice/client/web/initClient", relativeTo: baseURL) else { fatalError("Couldn't create fetch devices URL") }
         return serviceURL
     }
 
@@ -90,7 +78,7 @@ class PostLoginOperation: Operation, URLSessionDataDelegate {
 
         if Thread.isMainThread { NSLog("Main Thread!") }
         guard error == nil else {
-            NSLog("received error logging in: \(error?.localizedDescription ?? "or not")")
+            NSLog("received error fetching devices: \(error?.localizedDescription ?? "or not")")
             isFinished = true
             return
         }
@@ -99,7 +87,7 @@ class PostLoginOperation: Operation, URLSessionDataDelegate {
             let response = try JSONDecoder().decode(Response.self, from: localData)
             devices = response.devices
         } catch {
-            NSLog("received error logging in: \(error.localizedDescription)")
+            NSLog("received error fetching devices: \(error.localizedDescription)")
         }
 
         isFinished = true

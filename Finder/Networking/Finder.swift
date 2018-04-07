@@ -5,19 +5,29 @@ import os.log
 import Foundation
 
 class Finder {
-    func fetchDevices(_ callback: @escaping ([Device]?, Error?) -> Void) {
-        let loginOperation = LoginOperation()
-        let postLoginOperation = PostLoginOperation()
-        postLoginOperation.addDependency(loginOperation)
+    func login() {
+        operationQueue.addOperation(loginOperation)
+    }
 
-        postLoginOperation.completionBlock = { [weak postLoginOperation] in
-            callback(postLoginOperation?.devices, nil)
+    func fetchDevices(_ callback: @escaping ([Device]?, Error?) -> Void) {
+        let fetchDevicesOperation = FetchDevicesOperation()
+        fetchDevicesOperation.addDependency(loginOperation)
+
+        fetchDevicesOperation.completionBlock = { [weak fetchDevicesOperation] in
+            callback(fetchDevicesOperation?.devices, nil)
         }
 
-        operationQueue.addOperations([loginOperation, postLoginOperation], waitUntilFinished: false)
+        operationQueue.addOperation(fetchDevicesOperation)
+    }
+
+    func alert(_ device: Device) {
+        let alertOperation = AlertOperation(device)
+        alertOperation.addDependency(loginOperation)
+        operationQueue.addOperation(alertOperation)
     }
 
     // MARK: Boilerplate
 
-    let operationQueue = OperationQueue()
+    private let loginOperation = LoginOperation()
+    private let operationQueue = OperationQueue()
 }
