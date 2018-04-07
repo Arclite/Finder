@@ -21,6 +21,7 @@
 		04F71D022078A68200B693D6 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F71D012078A68200B693D6 /* UIViewControllerExtensions.swift */; };
 		346230E730471986065CFA3A /* FetchDevicesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34623ED2F10B2DB82166F283 /* FetchDevicesOperation.swift */; };
 		346231915DEFA12AF6D9E6D7 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346232C3CDAD43E90850DE0C /* Finder.swift */; };
+		346233774D1C29EA7B5903A6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462371AB535083AE04B682E /* LoginViewController.swift */; };
 		34623CD8FF64D26ED141A48A /* LoginOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462387A088990A789000D3E /* LoginOperation.swift */; };
 		34623D6C96F340808B4AB470 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34623D6D3AA1F0FD5F9D662F /* DataExtensions.swift */; };
 		34623DF63D644066FD57440E /* AlertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462337FE8087EDD1E2ADD51 /* AlertOperation.swift */; };
@@ -65,6 +66,7 @@
 		04F71D012078A68200B693D6 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		346232C3CDAD43E90850DE0C /* Finder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finder.swift; sourceTree = "<group>"; };
 		3462337FE8087EDD1E2ADD51 /* AlertOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertOperation.swift; sourceTree = "<group>"; };
+		3462371AB535083AE04B682E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3462387A088990A789000D3E /* LoginOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOperation.swift; sourceTree = "<group>"; };
 		346238AFC195BB86E6E78FAA /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		34623D6D3AA1F0FD5F9D662F /* DataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				34623E72BF059440EC49C8AC /* Networking */,
 				34623D6D3AA1F0FD5F9D662F /* DataExtensions.swift */,
 				346238AFC195BB86E6E78FAA /* Device.swift */,
+				3462371AB535083AE04B682E /* LoginViewController.swift */,
 			);
 			path = Finder;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				34623F70B20BCC1DB7EBE944 /* Device.swift in Sources */,
 				346230E730471986065CFA3A /* FetchDevicesOperation.swift in Sources */,
 				34623DF63D644066FD57440E /* AlertOperation.swift in Sources */,
+				346233774D1C29EA7B5903A6 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -441,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

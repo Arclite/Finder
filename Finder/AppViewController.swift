@@ -11,27 +11,12 @@ class AppViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .white
+        embed(initialViewController)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    // MARK: Boilerplate
 
-        let finder = Finder()
-        finder.login()
-
-        finder.fetchDevices { devices, error in
-            os_log("got devices:")
-            devices?.forEach { os_log("%@: %@", $0.name, $0.identifier) }
-
-            if let alertDeviceName = ProcessInfo.processInfo.environment["FINDER_ALERT_NAME"], let alertDevice = devices?.first(where: { $0.name == alertDeviceName }) {
-                os_log("alerting %@: %@", alertDevice.name, alertDevice.identifier)
-                finder.alert(alertDevice)
-            }
-
-            return
-        }
-    }
+    let initialViewController = LoginViewController()
 
     @available(*, unavailable)
     required init(coder: NSCoder) {
