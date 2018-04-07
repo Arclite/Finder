@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0467BCBA2078C8140054D069 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467BCB92078C8140054D069 /* IntentHandler.swift */; };
+		0467BCBE2078C8140054D069 /* Intent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0467BCB72078C8140054D069 /* Intent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0467BCC32078C9DD0054D069 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346232C3CDAD43E90850DE0C /* Finder.swift */; };
+		0467BCC42078C9E10054D069 /* LoginOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462387A088990A789000D3E /* LoginOperation.swift */; };
+		0467BCC52078C9E10054D069 /* FetchDevicesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34623ED2F10B2DB82166F283 /* FetchDevicesOperation.swift */; };
+		0467BCC62078C9E10054D069 /* AlertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462337FE8087EDD1E2ADD51 /* AlertOperation.swift */; };
+		0467BCC72078CA0F0054D069 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346238AFC195BB86E6E78FAA /* Device.swift */; };
 		04F71CF02078A1DD00B693D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F71CEF2078A1DD00B693D6 /* AppDelegate.swift */; };
 		04F71CF22078A1DD00B693D6 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F71CF12078A1DD00B693D6 /* AppViewController.swift */; };
 		04F71CF72078A1E200B693D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F71CF62078A1E200B693D6 /* Assets.xcassets */; };
@@ -20,7 +27,35 @@
 		34623F70B20BCC1DB7EBE944 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346238AFC195BB86E6E78FAA /* Device.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0467BCBC2078C8140054D069 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04F71CE42078A1DC00B693D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0467BCB62078C8140054D069;
+			remoteInfo = Intent;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0467BCC22078C8140054D069 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0467BCBE2078C8140054D069 /* Intent.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0467BCB22078C7EC0054D069 /* Finder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Finder.entitlements; sourceTree = "<group>"; };
+		0467BCB72078C8140054D069 /* Intent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Intent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0467BCB92078C8140054D069 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		0467BCBB2078C8140054D069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F71CEC2078A1DD00B693D6 /* Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F71CEF2078A1DD00B693D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F71CF12078A1DD00B693D6 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +72,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0467BCB42078C8140054D069 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04F71CE92078A1DD00B693D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -47,10 +89,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0467BCB82078C8140054D069 /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+				0467BCB92078C8140054D069 /* IntentHandler.swift */,
+				0467BCBB2078C8140054D069 /* Info.plist */,
+			);
+			path = Intent;
+			sourceTree = "<group>";
+		};
 		04F71CE32078A1DC00B693D6 = {
 			isa = PBXGroup;
 			children = (
 				04F71CEE2078A1DD00B693D6 /* Finder */,
+				0467BCB82078C8140054D069 /* Intent */,
 				04F71CED2078A1DD00B693D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				04F71CEC2078A1DD00B693D6 /* Finder.app */,
+				0467BCB72078C8140054D069 /* Intent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +119,7 @@
 		04F71CEE2078A1DD00B693D6 /* Finder */ = {
 			isa = PBXGroup;
 			children = (
+				0467BCB22078C7EC0054D069 /* Finder.entitlements */,
 				04F71CEF2078A1DD00B693D6 /* AppDelegate.swift */,
 				04F71CF12078A1DD00B693D6 /* AppViewController.swift */,
 				04F71CF62078A1E200B693D6 /* Assets.xcassets */,
@@ -93,6 +147,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0467BCB62078C8140054D069 /* Intent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0467BCBF2078C8140054D069 /* Build configuration list for PBXNativeTarget "Intent" */;
+			buildPhases = (
+				0467BCB32078C8140054D069 /* Sources */,
+				0467BCB42078C8140054D069 /* Frameworks */,
+				0467BCB52078C8140054D069 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Intent;
+			productName = Intent;
+			productReference = 0467BCB72078C8140054D069 /* Intent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		04F71CEB2078A1DD00B693D6 /* Finder */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04F71CFE2078A1E200B693D6 /* Build configuration list for PBXNativeTarget "Finder" */;
@@ -100,10 +171,12 @@
 				04F71CE82078A1DD00B693D6 /* Sources */,
 				04F71CE92078A1DD00B693D6 /* Frameworks */,
 				04F71CEA2078A1DD00B693D6 /* Resources */,
+				0467BCC22078C8140054D069 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0467BCBD2078C8140054D069 /* PBXTargetDependency */,
 			);
 			name = Finder;
 			productName = Finder;
@@ -120,8 +193,16 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Cocoatype, LLC";
 				TargetAttributes = {
+					0467BCB62078C8140054D069 = {
+						CreatedOnToolsVersion = 9.3;
+					};
 					04F71CEB2078A1DD00B693D6 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -139,11 +220,19 @@
 			projectRoot = "";
 			targets = (
 				04F71CEB2078A1DD00B693D6 /* Finder */,
+				0467BCB62078C8140054D069 /* Intent */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0467BCB52078C8140054D069 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04F71CEA2078A1DD00B693D6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,6 +245,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0467BCB32078C8140054D069 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0467BCC52078C9E10054D069 /* FetchDevicesOperation.swift in Sources */,
+				0467BCBA2078C8140054D069 /* IntentHandler.swift in Sources */,
+				0467BCC42078C9E10054D069 /* LoginOperation.swift in Sources */,
+				0467BCC72078CA0F0054D069 /* Device.swift in Sources */,
+				0467BCC62078C9E10054D069 /* AlertOperation.swift in Sources */,
+				0467BCC32078C9DD0054D069 /* Finder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04F71CE82078A1DD00B693D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,6 +276,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0467BCBD2078C8140054D069 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0467BCB62078C8140054D069 /* Intent */;
+			targetProxy = 0467BCBC2078C8140054D069 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		04F71CF82078A1E200B693D6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -186,6 +296,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0467BCC02078C8140054D069 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 287EDDET2B;
+				INFOPLIST_FILE = Intent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoatype.Finder.Intent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0467BCC12078C8140054D069 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 287EDDET2B;
+				INFOPLIST_FILE = Intent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoatype.Finder.Intent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		04F71CFC2078A1E200B693D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -303,10 +453,13 @@
 		04F71CFF2078A1E200B693D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Finder/Finder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 287EDDET2B;
 				INFOPLIST_FILE = Finder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,10 +474,13 @@
 		04F71D002078A1E200B693D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Finder/Finder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 287EDDET2B;
 				INFOPLIST_FILE = Finder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +495,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0467BCBF2078C8140054D069 /* Build configuration list for PBXNativeTarget "Intent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0467BCC02078C8140054D069 /* Debug */,
+				0467BCC12078C8140054D069 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		04F71CE72078A1DC00B693D6 /* Build configuration list for PBXProject "Finder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

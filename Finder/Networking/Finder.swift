@@ -20,9 +20,11 @@ class Finder {
         operationQueue.addOperation(fetchDevicesOperation)
     }
 
-    func alert(_ device: Device) {
+    func alert(_ device: Device, _ callback: (() -> Void)? = nil) {
         let alertOperation = AlertOperation(device)
         alertOperation.addDependency(loginOperation)
+        alertOperation.completionBlock = callback
+
         operationQueue.addOperation(alertOperation)
     }
 
