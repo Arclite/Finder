@@ -20,6 +20,6 @@ class AppViewController: UIViewController {
 
     @available(*, unavailable)
     required init(coder: NSCoder) {
-        UIViewController.notImplementedInit()
+        type(of: self).notImplementedInit()
     }
 }
