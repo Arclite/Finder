@@ -2,18 +2,28 @@
 
 An implementation of Find My iPhone for HomePod. For personal use only; I highly doubt this would be allowed in the App Store.
 
-## Getting Started
+## Using Finder
 
-Currently, Finder only works when run from Xcode. It uses environment variables to get your Apple ID and password in order to log into iCloud and hit the Find my iPhone API. In order to set this up: 
-1. Go to "Edit Scheme…" for the Finder or Intent scheme.
-2. Select the "Run" step.
-3. Select the "Arguments" tab.
-4. Add the following environment variables:
-    - `FINDER_APPLE_ID`: Your iCloud Apple ID.
-    - `FINDER_PASSWORD`: The password to the above Apple ID.
-    - `FINDER_ALERT_NAME`: The name of the device you want to send an alert to.
+The user interface for Finder is currently a bit of a hack job. Here are the steps to set up the app for use with HomePod:
 
-    Once you've added those environment variables, running either scheme will trigger the "play sound" effect for Find my iPhone for the device you've named in `FINDER_ALERT_NAME`.
+1. Launch Finder.
+2. Enter your Apple ID and password for iCloud.
+3. Tap the "Log In" button.
+3. Dismiss any two-factor authentication prompts that appear.
+4. If logging in was unsuccessful, the app will return to the login form.
+5. If logging in was successful, the app will crash. Yes, that's a success. Hush.
+
+At this point, you can now use Siri from either the device or HomePod to trigger Find my iPhone. The following command works best:
+
+> Hey Siri, send a message using Finder.
+
+This will trigger a "play sound" alert on the device that is set up to handle Personal Requests from HomePod, or the active device from any other iOS device.
+
+The following command is also available, but currently doesn't work very well:
+
+> Hey Siri, send a message to `<device name>` using Finder.
+
+This allows you to send an alert to any device associated with your iCloud account. However, the detection of device names isn't very robust, and so getting the correct device (or any device) is tricky.
     
 ## License
 
