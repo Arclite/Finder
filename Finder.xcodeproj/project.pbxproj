@@ -16,20 +16,22 @@
 		0467BCC72078CA0F0054D069 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346238AFC195BB86E6E78FAA /* Device.swift */; };
 		04F71CF02078A1DD00B693D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F71CEF2078A1DD00B693D6 /* AppDelegate.swift */; };
 		04F71CF22078A1DD00B693D6 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F71CF12078A1DD00B693D6 /* AppViewController.swift */; };
-		04F71CF72078A1E200B693D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F71CF62078A1E200B693D6 /* Assets.xcassets */; };
-		04F71CFA2078A1E200B693D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F71CF82078A1E200B693D6 /* LaunchScreen.storyboard */; };
 		346230BD598FBD8514BA2FCE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462337A2DF5BD57BAE79801 /* LoginViewController.swift */; };
 		346230E730471986065CFA3A /* FetchDevicesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34623ED2F10B2DB82166F283 /* FetchDevicesOperation.swift */; };
 		3462310BCEBE60064FFEAD44 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34623449A1A720282A3FDFB1 /* LoginView.swift */; };
 		346231915DEFA12AF6D9E6D7 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346232C3CDAD43E90850DE0C /* Finder.swift */; };
 		346231A4CF7C146517804E3E /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346231B868431D297A92BCE4 /* UIViewControllerExtensions.swift */; };
+		3462329608A712B08B2B2D16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 346232C1883114ED52C3EC79 /* Localizable.strings */; };
+		34623719535AC5DFA0AA8046 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346231A808B927C844103FE7 /* LoginButton.swift */; };
 		346238D2809A3B09733EB0AD /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346231C91A0CAF8D190AEFCC /* DataExtensions.swift */; };
+		34623959241579E60074711B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34623C6A38693F986BDD6BF7 /* Assets.xcassets */; };
 		346239683EED44939AE38A15 /* LoginTextFieldLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462311390B6EDFBEA82A46C /* LoginTextFieldLabel.swift */; };
 		346239BBD1FDCC3CAD9CE651 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34623F82A2A5CE24E9861639 /* LoginTextField.swift */; };
 		346239ECD5D6B0A99B2821AB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34623FDD6861D8CEE5FA82F5 /* UIViewExtensions.swift */; };
 		34623CD8FF64D26ED141A48A /* LoginOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462387A088990A789000D3E /* LoginOperation.swift */; };
 		34623DF63D644066FD57440E /* AlertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462337FE8087EDD1E2ADD51 /* AlertOperation.swift */; };
 		34623F70B20BCC1DB7EBE944 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346238AFC195BB86E6E78FAA /* Device.swift */; };
+		34623F8FC933F6D7F9B31EC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34623FDDB46C6BEA9029087C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,26 +59,28 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0467BCB22078C7EC0054D069 /* Finder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Finder.entitlements; sourceTree = "<group>"; };
 		0467BCB72078C8140054D069 /* Intent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Intent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0467BCB92078C8140054D069 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		0467BCBB2078C8140054D069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F71CEC2078A1DD00B693D6 /* Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F71CEF2078A1DD00B693D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F71CF12078A1DD00B693D6 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
-		04F71CF62078A1E200B693D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04F71CF92078A1E200B693D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		04F71CFB2078A1E200B693D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3462311390B6EDFBEA82A46C /* LoginTextFieldLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextFieldLabel.swift; sourceTree = "<group>"; };
+		346231A808B927C844103FE7 /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		346231B868431D297A92BCE4 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		346231C91A0CAF8D190AEFCC /* DataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
+		346232C1883114ED52C3EC79 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		346232C3CDAD43E90850DE0C /* Finder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finder.swift; sourceTree = "<group>"; };
 		3462337A2DF5BD57BAE79801 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3462337FE8087EDD1E2ADD51 /* AlertOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertOperation.swift; sourceTree = "<group>"; };
 		34623449A1A720282A3FDFB1 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		346236E6FAA30FE227D3EC4A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		3462387A088990A789000D3E /* LoginOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOperation.swift; sourceTree = "<group>"; };
 		346238AFC195BB86E6E78FAA /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		34623C6A38693F986BDD6BF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34623D9300CB347BEE58DE3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34623ED2F10B2DB82166F283 /* FetchDevicesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDevicesOperation.swift; sourceTree = "<group>"; };
+		34623F1B68E563B41537A857 /* Finder.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Finder.entitlements; sourceTree = "<group>"; };
 		34623F82A2A5CE24E9861639 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		34623FDD6861D8CEE5FA82F5 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,16 +133,13 @@
 		04F71CEE2078A1DD00B693D6 /* Finder */ = {
 			isa = PBXGroup;
 			children = (
-				0467BCB22078C7EC0054D069 /* Finder.entitlements */,
 				04F71CEF2078A1DD00B693D6 /* AppDelegate.swift */,
 				04F71CF12078A1DD00B693D6 /* AppViewController.swift */,
-				04F71CF62078A1E200B693D6 /* Assets.xcassets */,
-				04F71CF82078A1E200B693D6 /* LaunchScreen.storyboard */,
-				04F71CFB2078A1E200B693D6 /* Info.plist */,
 				34623E72BF059440EC49C8AC /* Networking */,
 				346238AFC195BB86E6E78FAA /* Device.swift */,
 				3462319A9EAE657DC273AC3C /* Login */,
 				34623C57EB1721A08002D68D /* Extensions */,
+				34623DABD4F30772CD1C85D2 /* Resources */,
 			);
 			path = Finder;
 			sourceTree = "<group>";
@@ -150,6 +151,7 @@
 				3462311390B6EDFBEA82A46C /* LoginTextFieldLabel.swift */,
 				34623449A1A720282A3FDFB1 /* LoginView.swift */,
 				3462337A2DF5BD57BAE79801 /* LoginViewController.swift */,
+				346231A808B927C844103FE7 /* LoginButton.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -162,6 +164,18 @@
 				346231C91A0CAF8D190AEFCC /* DataExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		34623DABD4F30772CD1C85D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				34623C6A38693F986BDD6BF7 /* Assets.xcassets */,
+				34623F1B68E563B41537A857 /* Finder.entitlements */,
+				346236E6FAA30FE227D3EC4A /* Info.plist */,
+				34623FDDB46C6BEA9029087C /* LaunchScreen.storyboard */,
+				346232C1883114ED52C3EC79 /* Localizable.strings */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		34623E72BF059440EC49C8AC /* Networking */ = {
@@ -268,8 +282,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F71CFA2078A1E200B693D6 /* LaunchScreen.storyboard in Resources */,
-				04F71CF72078A1E200B693D6 /* Assets.xcassets in Resources */,
+				34623959241579E60074711B /* Assets.xcassets in Resources */,
+				34623F8FC933F6D7F9B31EC4 /* LaunchScreen.storyboard in Resources */,
+				3462329608A712B08B2B2D16 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +322,7 @@
 				346231A4CF7C146517804E3E /* UIViewControllerExtensions.swift in Sources */,
 				346239ECD5D6B0A99B2821AB /* UIViewExtensions.swift in Sources */,
 				346238D2809A3B09733EB0AD /* DataExtensions.swift in Sources */,
+				34623719535AC5DFA0AA8046 /* LoginButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,10 +337,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		04F71CF82078A1E200B693D6 /* LaunchScreen.storyboard */ = {
+		34623FDDB46C6BEA9029087C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				04F71CF92078A1E200B693D6 /* Base */,
+				34623D9300CB347BEE58DE3A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

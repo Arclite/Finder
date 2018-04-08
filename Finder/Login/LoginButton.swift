@@ -3,12 +3,17 @@
 
 import UIKit
 
-class LoginTextField: UITextField {
-    init() {
+class LoginButton: UIButton {
+    init(_ title: String) {
         super.init(frame: .zero)
-        borderStyle = .line
         translatesAutoresizingMaskIntoConstraints = false
+        setTitleColor(tintColor, for: .normal)
+        setTitle(title, for: .normal)
     }
+
+    // MARK: Boilerplate
+
+    override var intrinsicContentSize: CGSize { return CGSize(width: UIViewNoIntrinsicMetric, height: 44.0) }
 
     @available(*, unavailable)
     required init(coder: NSCoder) {

@@ -1,5 +1,5 @@
-// Created by Geoff Pado on 4/7/18.
-// Copyright © 2018 Cocoatype, LLC. All rights reserved.
+//  Created by Geoff Pado on 4/7/18.
+//  Copyright © 2018 Cocoatype, LLC. All rights reserved.
 
 import UIKit
 
@@ -22,7 +22,9 @@ class LoginView: UIView {
         passwordTextField.autocapitalizationType = .none
         passwordTextField.autocorrectionType = .no
 
-        let stackView = UIStackView(arrangedSubviews: [appleIDLabel, appleIDTextField, passwordLabel, passwordTextField])
+        let loginButton = LoginButton(LoginView.loginButtonTitle)
+
+        let stackView = UIStackView(arrangedSubviews: [appleIDLabel, appleIDTextField, passwordLabel, passwordTextField, loginButton])
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         stackView.spacing = 8
@@ -37,15 +39,18 @@ class LoginView: UIView {
 
         self.appleIDTextField = appleIDTextField
         self.passwordTextField = passwordTextField
+        self.loginButton = loginButton
     }
 
     // MARK: Boilerplate
 
     private weak var appleIDTextField: UITextField!
     private weak var passwordTextField: UITextField!
+    private weak var loginButton: UIButton!
 
     private static let appleIDLabelText = NSLocalizedString("LoginView.appleIDLabelText", comment: "Text for the label describing the Apple ID login text field")
     private static let passwordLabelText = NSLocalizedString("LoginView.passwordLabelText", comment: "Text for the label describing the password login text field")
+    private static let loginButtonTitle = NSLocalizedString("LoginView.loginButtonTitle", comment: "Title for the button to log in")
 
     @available(*, unavailable)
     required init(coder: NSCoder) {
