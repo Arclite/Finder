@@ -39,7 +39,7 @@ class LoginActivityViewController: UIViewController {
             }
 
             CredentialStorage.store(appleID: loginOperation.appleID, password: loginOperation.password)
-            UserDefaults.suite.set(serviceURL, forKey: DefaultsKeys.serviceURL)
+            UserDefaults.suite.baseURL = serviceURL
             self?.onLogin?(true, loginOperation.error)
         }
         operationQueue.addOperation(loginOperation)

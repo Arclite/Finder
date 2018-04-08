@@ -8,6 +8,11 @@ class LoginOperation: Operation, URLSessionDataDelegate {
     private(set) var error: Error?
     private(set) var serviceURL: URL?
 
+    convenience override init() {
+        guard let (appleID, password) = CredentialStorage.storedCredentials else { fatalError("Could not locate stored credentials") }
+        self.init(appleID: appleID, password: password)
+    }
+
     init(appleID: String, password: String) {
         self.appleID = appleID
         self.password = password

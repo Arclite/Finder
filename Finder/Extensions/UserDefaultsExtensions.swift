@@ -5,11 +5,16 @@ import Foundation
 
 extension UserDefaults {
     static var suite: UserDefaults {
-        // TODO: Replace with correct UserDefaults for suite
-        return standard
+        guard let suiteDefaults = UserDefaults(suiteName: "group.com.cocoatype.Finder") else { fatalError("Couldn't create defaults for suite") }
+        return suiteDefaults
+    }
+
+    var baseURL: URL? {
+        get { return url(forKey: DefaultsKeys.baseURL) }
+        set(newURL) { set(newURL, forKey: DefaultsKeys.baseURL) }
     }
 }
 
 enum DefaultsKeys {
-    static let serviceURL = "DefaultsKeys.serviceURL"
+    static let baseURL = "DefaultsKeys.baseURL"
 }
