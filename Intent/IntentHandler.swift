@@ -31,7 +31,7 @@ class IntentHandler: INExtension, INSendMessageIntentHandling {
     }
 
     func handle(intent: INSendMessageIntent, completion: @escaping (INSendMessageIntentResponse) -> Void) {
-        guard let alertDeviceName = intent.recipients?.first?.personHandle?.value else { return }
+        guard let alertDeviceName = intent.recipients?.first?.displayName else { return }
         let finder = Finder()
         let userActivity = NSUserActivity(activityType: NSStringFromClass(INSendMessageIntent.self))
 

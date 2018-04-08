@@ -21,7 +21,9 @@ class AppViewController: UIViewController {
 
             switch success {
             case true:
-                fatalError("success")
+                DispatchQueue.main.async {
+                    appViewController.transition(to: FetchDevicesViewController())
+                }
             case false:
                 DispatchQueue.main.async {
                     let loginViewController = appViewController.newLoginFormViewController()

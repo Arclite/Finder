@@ -22,7 +22,9 @@
 		3462310BCEBE60064FFEAD44 /* LoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34623449A1A720282A3FDFB1 /* LoginFormView.swift */; };
 		346231915DEFA12AF6D9E6D7 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346232C3CDAD43E90850DE0C /* Finder.swift */; };
 		346231A4CF7C146517804E3E /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346231B868431D297A92BCE4 /* UIViewControllerExtensions.swift */; };
+		346231D603502E539E31981F /* FetchDevicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462335B5CA27018C97277DB /* FetchDevicesViewController.swift */; };
 		3462329608A712B08B2B2D16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 346232C1883114ED52C3EC79 /* Localizable.strings */; };
+		3462339DEB9E50496B27FC3D /* FetchDevicesActivityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34623947AA0AEE5D28629A97 /* FetchDevicesActivityLabel.swift */; };
 		346233E940096F260271D62F /* CredentialStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462356CABE6D90619DFF3AA /* CredentialStorage.swift */; };
 		34623660D0CA503D46C59F38 /* LoginActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462368C3F5C9037087EB2EB /* LoginActivityViewController.swift */; };
 		34623719535AC5DFA0AA8046 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346231A808B927C844103FE7 /* LoginButton.swift */; };
@@ -77,6 +79,7 @@
 		346231C91A0CAF8D190AEFCC /* DataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		346232C1883114ED52C3EC79 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		346232C3CDAD43E90850DE0C /* Finder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finder.swift; sourceTree = "<group>"; };
+		3462335B5CA27018C97277DB /* FetchDevicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDevicesViewController.swift; sourceTree = "<group>"; };
 		3462337A2DF5BD57BAE79801 /* LoginFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
 		3462337FE8087EDD1E2ADD51 /* AlertOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertOperation.swift; sourceTree = "<group>"; };
 		34623449A1A720282A3FDFB1 /* LoginFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		346236E6FAA30FE227D3EC4A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		3462387A088990A789000D3E /* LoginOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOperation.swift; sourceTree = "<group>"; };
 		346238AFC195BB86E6E78FAA /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		34623947AA0AEE5D28629A97 /* FetchDevicesActivityLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDevicesActivityLabel.swift; sourceTree = "<group>"; };
 		34623C6A38693F986BDD6BF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34623CF89CC53EAD8E6AFF57 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		34623D9300CB347BEE58DE3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 				34623DABD4F30772CD1C85D2 /* Resources */,
 				346232AF6EF6A058D52A1353 /* Login Activity */,
 				3462356CABE6D90619DFF3AA /* CredentialStorage.swift */,
+				34623E368565A16E2D2B10E4 /* Device List */,
 			);
 			path = Finder;
 			sourceTree = "<group>";
@@ -197,6 +202,15 @@
 				346232C1883114ED52C3EC79 /* Localizable.strings */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		34623E368565A16E2D2B10E4 /* Device List */ = {
+			isa = PBXGroup;
+			children = (
+				3462335B5CA27018C97277DB /* FetchDevicesViewController.swift */,
+				34623947AA0AEE5D28629A97 /* FetchDevicesActivityLabel.swift */,
+			);
+			path = "Device List";
 			sourceTree = "<group>";
 		};
 		34623E72BF059440EC49C8AC /* Networking */ = {
@@ -363,6 +377,8 @@
 				34623660D0CA503D46C59F38 /* LoginActivityViewController.swift in Sources */,
 				34623F9DFD5BFB0CF0840063 /* UserDefaultsExtensions.swift in Sources */,
 				346233E940096F260271D62F /* CredentialStorage.swift in Sources */,
+				346231D603502E539E31981F /* FetchDevicesViewController.swift in Sources */,
+				3462339DEB9E50496B27FC3D /* FetchDevicesActivityLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
