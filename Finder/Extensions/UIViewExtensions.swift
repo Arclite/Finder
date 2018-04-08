@@ -3,7 +3,7 @@
 
 import UIKit
 
-extension UIViewController {
+extension UIView {
     static func notImplementedInit() -> Never {
         fatalError("\(String(describing: type(of: self))) does not implement init(coder:)")
     }

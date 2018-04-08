@@ -1,0 +1,12 @@
+/**
+ * LoginView.swift
+ */
+
+// Text for the label describing the Apple ID login text field
+"LoginView.appleIDLabelText" = "Apple ID";
+
+// Text for the label describing the password login text field
+"LoginView.passwordLabelText" = "Password";
+
+// Title for the button to log in
+"LoginView.loginButtonTitle" = "Log In";

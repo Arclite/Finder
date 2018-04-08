@@ -1,11 +1,23 @@
-// Created by Geoff Pado on 4/7/18.
-// Copyright (c) 2018 Cocoatype, LLC. All rights reserved.
+//  Created by Geoff Pado on 4/7/18.
+//  Copyright © 2018 Cocoatype, LLC. All rights reserved.
 
 import Foundation
 
 class LoginOperation: Operation, URLSessionDataDelegate {
-    // return value
+    // return values
+    private(set) var error: Error?
     private(set) var serviceURL: URL?
+
+    convenience override init() {
+        guard let (appleID, password) = CredentialStorage.storedCredentials else { fatalError("Could not locate stored credentials") }
+        self.init(appleID: appleID, password: password)
+    }
+
+    init(appleID: String, password: String) {
+        self.appleID = appleID
+        self.password = password
+        super.init()
+    }
 
     override func start() {
         if isCancelled {
@@ -15,18 +27,6 @@ class LoginOperation: Operation, URLSessionDataDelegate {
 
         localSessionTask = localURLSession.dataTask(with: request)
         localSessionTask?.resume()
-    }
-
-    // MARK: Login Values
-
-    var appleID: String {
-        guard let appleID = ProcessInfo.processInfo.environment["FINDER_APPLE_ID"] else { fatalError("Please provide your Apple ID with the environment variable 'FINDER_APPLE_ID'.") }
-        return appleID
-    }
-
-    var password: String {
-        guard let password = ProcessInfo.processInfo.environment["FINDER_PASSWORD"] else { fatalError("Please provide your Apple ID with the environment variable 'FINDER_PASSWORD'.") }
-        return password
     }
 
     // MARK: URL Request
@@ -55,8 +55,7 @@ class LoginOperation: Operation, URLSessionDataDelegate {
 
     // MARK: URLSessionDataDelegate
 
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse,
-                    completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
         if isCancelled {
             isFinished = true
             localSessionTask?.cancel()
@@ -101,6 +100,9 @@ class LoginOperation: Operation, URLSessionDataDelegate {
     }
 
     // MARK: Boilerplate
+
+    let appleID: String
+    let password: String
 
     private var _finished = false
     override var isFinished: Bool {

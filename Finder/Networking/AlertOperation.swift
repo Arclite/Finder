@@ -1,5 +1,5 @@
-// Created by Geoff Pado on 4/7/18.
-// Copyright (c) 2018 Cocoatype, LLC. All rights reserved.
+//  Created by Geoff Pado on 4/7/18.
+//  Copyright © 2018 Cocoatype, LLC. All rights reserved.
 
 import Foundation
 
@@ -9,7 +9,7 @@ class AlertOperation: Operation, URLSessionDataDelegate {
         super.init()
     }
     override func start() {
-        guard let loginOperation = dependencies.first as? LoginOperation, let baseURL = loginOperation.serviceURL else { isFinished = true; return }
+        guard let baseURL = UserDefaults.suite.baseURL else { isFinished = true; return }
         guard isCancelled == false else { isFinished = true; return }
 
         self.baseURL = baseURL

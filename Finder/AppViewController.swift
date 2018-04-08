@@ -11,30 +11,44 @@ class AppViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .white
+        embed(initialViewController)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    private func performLogin(withAppleID appleID: String, password: String) {
+        let activityViewController = LoginActivityViewController(appleID: appleID, password: password)
+        activityViewController.onLogin = { [weak self] success, error in
+            guard let appViewController = self else { return }
 
-        let finder = Finder()
-        finder.login()
-
-        finder.fetchDevices { devices, error in
-            os_log("got devices:")
-            devices?.forEach { os_log("%@: %@", $0.name, $0.identifier) }
-
-            if let alertDeviceName = ProcessInfo.processInfo.environment["FINDER_ALERT_NAME"], let alertDevice = devices?.first(where: { $0.name == alertDeviceName }) {
-                os_log("alerting %@: %@", alertDevice.name, alertDevice.identifier)
-                finder.alert(alertDevice)
+            switch success {
+            case true:
+                fatalError("success")
+            case false:
+                DispatchQueue.main.async {
+                    let loginViewController = appViewController.newLoginFormViewController()
+                    appViewController.transition(to: loginViewController)
+                }
             }
-
-            return
         }
+        transition(to: activityViewController)
+    }
+
+    // MARK: Boilerplate
+
+    lazy var initialViewController: UIViewController = {
+        return newLoginFormViewController()
+    }()
+
+    private func newLoginFormViewController() -> LoginFormViewController {
+        let loginViewController = LoginFormViewController()
+        loginViewController.submitAction = { [weak self] appleID, password in
+            self?.performLogin(withAppleID: appleID, password: password)
+        }
+
+        return loginViewController
     }
 
     @available(*, unavailable)
     required init(coder: NSCoder) {
-        UIViewController.notImplementedInit()
+        type(of: self).notImplementedInit()
     }
 }
