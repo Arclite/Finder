@@ -1,4 +1,17 @@
 /**
+ * FetchDevicesViewController.swift
+ */
+
+// Text displayed while fetching the list of devices
+"FetchDevicesViewController.fetchingText" = "Updating device list…";
+
+// Text displayed after failing to fetch the list of devices
+"FetchDevicesViewController.fetchFailedText" = "Updating failed.";
+
+// Text displayed after successfully fetching the list of devices
+"FetchDevicesViewController.fetchSuccessfulText" = "Device list up to date.";
+
+/**
  * LoginView.swift
  */
 
