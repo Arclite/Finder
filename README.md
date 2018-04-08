@@ -11,19 +11,19 @@ The user interface for Finder is currently a bit of a hack job. Here are the ste
 3. Tap the "Log In" button.
 3. Dismiss any two-factor authentication prompts that appear.
 4. If logging in was unsuccessful, the app will return to the login form.
-5. If logging in was successful, the app will crash. Yes, that's a success. Hush.
+5. If logging in was successful, the app will begin updating the device list.
 
-At this point, you can now use Siri from either the device or HomePod to trigger Find my iPhone. The following command works best:
+Once the device list finishes updating, you can now use Siri from either the device or HomePod to trigger Find my iPhone. The following command is simplest:
 
 > Hey Siri, send a message using Finder.
 
-This will trigger a "play sound" alert on the device that is set up to handle Personal Requests from HomePod, or the active device from any other iOS device.
+This will trigger a "play sound" alert on the device that is set up to handle Personal Requests from HomePod, or the active device from any other iOS device (though this has dubious utility).
 
-The following command is also available, but currently doesn't work very well:
+The following command is also available:
 
 > Hey Siri, send a message to `<device name>` using Finder.
 
-This allows you to send an alert to any device associated with your iCloud account. However, the detection of device names isn't very robust, and so getting the correct device (or any device) is tricky.
+This allows you to send an alert to any device associated with your iCloud account.
     
 ## License
 
