@@ -3,14 +3,16 @@
 
 import UIKit
 
-class LoginView: UIView {
+class LoginFormView: UIView {
+    var submitAction: ((String, String) -> Void)?
+
     init() {
         super.init(frame: .zero)
         backgroundColor = .white
         translatesAutoresizingMaskIntoConstraints = false
 
-        let appleIDLabel = LoginTextFieldLabel(LoginView.appleIDLabelText)
-        let passwordLabel = LoginTextFieldLabel(LoginView.passwordLabelText)
+        let appleIDLabel = LoginTextFieldLabel(LoginFormView.appleIDLabelText)
+        let passwordLabel = LoginTextFieldLabel(LoginFormView.passwordLabelText)
 
         let appleIDTextField = LoginTextField()
         appleIDTextField.keyboardType = .emailAddress
@@ -22,7 +24,8 @@ class LoginView: UIView {
         passwordTextField.autocapitalizationType = .none
         passwordTextField.autocorrectionType = .no
 
-        let loginButton = LoginButton(LoginView.loginButtonTitle)
+        let loginButton = LoginButton(LoginFormView.loginButtonTitle)
+        loginButton.addTarget(self, action: #selector(LoginFormView.submitForm), for: .touchUpInside)
 
         let stackView = UIStackView(arrangedSubviews: [appleIDLabel, appleIDTextField, passwordLabel, passwordTextField, loginButton])
         stackView.axis = .vertical
@@ -40,6 +43,17 @@ class LoginView: UIView {
         self.appleIDTextField = appleIDTextField
         self.passwordTextField = passwordTextField
         self.loginButton = loginButton
+    }
+
+    // MARK: Submission
+
+    @objc private func submitForm() {
+        guard
+          let appleID = appleIDTextField.text,
+          let password = passwordTextField.text
+        else { return }
+
+        submitAction?(appleID, password)
     }
 
     // MARK: Boilerplate

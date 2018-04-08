@@ -10,6 +10,7 @@ extension UIViewController {
 
     func embed(_ newChild: UIViewController) {
         if let existingChild = childViewControllers.first {
+            existingChild.willMove(toParentViewController: nil)
             existingChild.view.removeFromSuperview()
             existingChild.removeFromParentViewController()
         }
@@ -18,8 +19,8 @@ extension UIViewController {
         newChildView.translatesAutoresizingMaskIntoConstraints = false
 
         addChildViewController(newChild)
-
         view.addSubview(newChildView)
+        newChild.didMove(toParentViewController: self)
 
         NSLayoutConstraint.activate([
             newChildView.widthAnchor.constraint(equalTo: view.widthAnchor),
@@ -27,5 +28,9 @@ extension UIViewController {
             newChildView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             newChildView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
+    }
+
+    func transition(to newChild: UIViewController) {
+        UIView.transition(with: view, duration: 0.3, options: .transitionCrossDissolve, animations: { [unowned self] in self.embed(newChild) }, completion: nil)
     }
 }
