@@ -96,8 +96,8 @@ class LoginOperation: Operation, URLSessionDataDelegate {
 
     // MARK: Boilerplate
 
-    private let appleID: String
-    private let password: String
+    let appleID: String
+    let password: String
 
     private var _finished = false
     override var isFinished: Bool {

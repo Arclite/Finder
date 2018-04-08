@@ -22,6 +22,7 @@
 		346231915DEFA12AF6D9E6D7 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346232C3CDAD43E90850DE0C /* Finder.swift */; };
 		346231A4CF7C146517804E3E /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346231B868431D297A92BCE4 /* UIViewControllerExtensions.swift */; };
 		3462329608A712B08B2B2D16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 346232C1883114ED52C3EC79 /* Localizable.strings */; };
+		346233E940096F260271D62F /* CredentialStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462356CABE6D90619DFF3AA /* CredentialStorage.swift */; };
 		34623660D0CA503D46C59F38 /* LoginActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462368C3F5C9037087EB2EB /* LoginActivityViewController.swift */; };
 		34623719535AC5DFA0AA8046 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346231A808B927C844103FE7 /* LoginButton.swift */; };
 		346238D2809A3B09733EB0AD /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346231C91A0CAF8D190AEFCC /* DataExtensions.swift */; };
@@ -76,6 +77,7 @@
 		3462337A2DF5BD57BAE79801 /* LoginFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
 		3462337FE8087EDD1E2ADD51 /* AlertOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertOperation.swift; sourceTree = "<group>"; };
 		34623449A1A720282A3FDFB1 /* LoginFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
+		3462356CABE6D90619DFF3AA /* CredentialStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialStorage.swift; sourceTree = "<group>"; };
 		3462368C3F5C9037087EB2EB /* LoginActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginActivityViewController.swift; sourceTree = "<group>"; };
 		346236E6FAA30FE227D3EC4A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		3462387A088990A789000D3E /* LoginOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOperation.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				34623C57EB1721A08002D68D /* Extensions */,
 				34623DABD4F30772CD1C85D2 /* Resources */,
 				346232AF6EF6A058D52A1353 /* Login Activity */,
+				3462356CABE6D90619DFF3AA /* CredentialStorage.swift */,
 			);
 			path = Finder;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				34623719535AC5DFA0AA8046 /* LoginButton.swift in Sources */,
 				34623660D0CA503D46C59F38 /* LoginActivityViewController.swift in Sources */,
 				34623F9DFD5BFB0CF0840063 /* UserDefaultsExtensions.swift in Sources */,
+				346233E940096F260271D62F /* CredentialStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

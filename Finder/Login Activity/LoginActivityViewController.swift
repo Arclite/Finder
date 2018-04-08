@@ -32,13 +32,15 @@ class LoginActivityViewController: UIViewController {
 
         let loginOperation = LoginOperation(appleID: appleID, password: password)
         loginOperation.completionBlock = { [weak self, weak loginOperation] in
-            guard let serviceURL = loginOperation?.serviceURL else {
-                self?.onLogin?(false, loginOperation?.error)
+            guard let loginOperation = loginOperation else { return }
+            guard let serviceURL = loginOperation.serviceURL else {
+                self?.onLogin?(false, loginOperation.error)
                 return
             }
 
+            CredentialStorage.store(appleID: loginOperation.appleID, password: loginOperation.password)
             UserDefaults.suite.set(serviceURL, forKey: DefaultsKeys.serviceURL)
-            self?.onLogin?(true, loginOperation?.error)
+            self?.onLogin?(true, loginOperation.error)
         }
         operationQueue.addOperation(loginOperation)
     }

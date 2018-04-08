@@ -20,7 +20,8 @@ class AppViewController: UIViewController {
             guard let appViewController = self else { return }
 
             switch success {
-            case true: fatalError("success")
+            case true:
+                fatalError("success")
             case false:
                 DispatchQueue.main.async {
                     let loginViewController = appViewController.newLoginFormViewController()
