@@ -2,23 +2,41 @@
 //  Copyright © 2018 Cocoatype, LLC. All rights reserved.
 
 import Foundation
+import Security
 
 enum CredentialStorage {
     static func store(appleID: String, password: String) {
-        URLCredentialStorage.shared.setDefaultCredential(URLCredential(user: appleID, password: password, persistence: .synchronizable), for: defaultProtectionSpace)
+        guard let passwordData = password.data(using: .utf8) else { fatalError("Error generating password data") }
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccessible as String: kSecAttrAccessibleAfterFirstUnlock,
+            kSecAttrService as String: "com.cocoatype.Finder",
+            kSecAttrAccount as String: appleID,
+            kSecValueData as String: passwordData
+        ]
+
+        SecItemAdd(query as CFDictionary, nil)
     }
 
     static var storedCredentials: (appleID: String, password: String)? {
+        var item: CFTypeRef?
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: "com.cocoatype.Finder",
+            kSecMatchLimit as String: kSecMatchLimitOne,
+            kSecReturnAttributes as String: true,
+            kSecReturnData as String: true
+        ]
+
+        let status = SecItemCopyMatching(query as CFDictionary, &item)
         guard
-          let existingCredential = URLCredentialStorage.shared.defaultCredential(for: defaultProtectionSpace),
-          let appleID = existingCredential.user,
-          let password = existingCredential.password
+          status == errSecSuccess,
+          let existingItem = item as? [String: Any],
+          let passwordData = existingItem[kSecValueData as String] as? Data,
+          let password = String(data: passwordData, encoding: .utf8),
+          let appleID = existingItem[kSecAttrAccount as String] as? String
         else { return nil }
 
         return (appleID, password)
-    }
-
-    private static var defaultProtectionSpace: URLProtectionSpace {
-        return URLProtectionSpace(host: "com.cocoatype.Finder", port: 443, protocol: nil, realm: nil, authenticationMethod: nil)
     }
 }
