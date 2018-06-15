@@ -37,7 +37,7 @@ class LoginFormView: UIView {
         NSLayoutConstraint.activate([
             stackView.widthAnchor.constraint(equalToConstant: 200),
             stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: centerYAnchor)
+            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
         ])
 
         self.appleIDTextField = appleIDTextField

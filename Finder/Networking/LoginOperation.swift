@@ -93,7 +93,7 @@ class LoginOperation: Operation, URLSessionDataDelegate {
             let response = try JSONDecoder().decode(Response.self, from: localData)
             serviceURL = response.finderService?.url
         } catch {
-            NSLog("received error logging in: \(error.localizedDescription)")
+            NSLog("received error decoding JSON: \(error)")
         }
 
         isFinished = true
@@ -117,15 +117,18 @@ class LoginOperation: Operation, URLSessionDataDelegate {
     private var localData = Data()
     private var localSessionTask: URLSessionTask?
 
-    private struct Response: Codable {
+    private struct Response: Decodable {
         let webservices: [String: Service]
         var finderService: Service? {
             return webservices["findme"]
         }
 
         fileprivate struct Service: Codable {
-            let urlString: String
-            var url: URL? { return URL(string: urlString) }
+            let urlString: String?
+            var url: URL? {
+                guard let urlString = urlString else { return nil }
+                return URL(string: urlString)
+            }
 
             enum CodingKeys: String, CodingKey {
                 case urlString = "url"
