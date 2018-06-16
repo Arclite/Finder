@@ -5,7 +5,7 @@ import os.log
 import Intents
 import UIKit
 
-class IntentHandler: INExtension, INSendMessageIntentHandling {
+class IntentHandler: INExtension, INSendMessageIntentHandling, FindDeviceIntentHandling {
     func resolveRecipients(for intent: INSendMessageIntent, with completion: @escaping ([INPersonResolutionResult]) -> Void) {
         guard let recipients = intent.recipients else { return }
 
@@ -49,6 +49,37 @@ class IntentHandler: INExtension, INSendMessageIntentHandling {
                 }
             } else {
                 completion(INSendMessageIntentResponse(code: .failure, userActivity: userActivity))
+            }
+
+            return
+        }
+    }
+
+    @available(iOSApplicationExtension 12.0, *)
+    func confirm(intent: FindDeviceIntent, completion: @escaping (FindDeviceIntentResponse) -> Void) {
+        let response = FindDeviceIntentResponse(code: .ready, userActivity: nil)
+        completion(response)
+    }
+
+    @available(iOSApplicationExtension 12.0, *)
+    func handle(intent: FindDeviceIntent, completion: @escaping (FindDeviceIntentResponse) -> Void) {
+        guard let alertDeviceName = intent.deviceName else { return }
+        let finder = Finder()
+
+        finder.login()
+
+        finder.fetchDevices { devices, error in
+            os_log("got devices:")
+            devices?.forEach { os_log("%@: %@", $0.name, $0.identifier) }
+
+            if let alertDevice = devices?.first(where: { $0.name == alertDeviceName }) {
+                os_log("alerting %@: %@", alertDevice.name, alertDevice.identifier)
+                finder.alert(alertDevice) {
+                    let response = FindDeviceIntentResponse(code: .success, userActivity: nil)
+                    completion(response)
+                }
+            } else {
+                completion(FindDeviceIntentResponse(code: .failure, userActivity: nil))
             }
 
             return

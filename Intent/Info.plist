@@ -26,8 +26,11 @@
 		<dict>
 			<key>IntentsRestrictedWhileLocked</key>
 			<array/>
+			<key>IntentsRestrictedWhileProtectedDataUnavailable</key>
+			<array/>
 			<key>IntentsSupported</key>
 			<array>
+				<string>FindDeviceIntent</string>
 				<string>INSendMessageIntent</string>
 			</array>
 		</dict>

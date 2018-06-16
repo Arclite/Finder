@@ -2,9 +2,24 @@
 //  Copyright © 2018 Cocoatype, LLC. All rights reserved.
 
 import Intents
+import IntentsUI
 import UIKit
 
-class FetchDevicesViewController: UIViewController {
+class FetchDevicesViewController: UIViewController, INUIAddVoiceShortcutViewControllerDelegate {
+    @available(iOS 12.0, *)
+    func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
+        NSLog("finished with error: \(error.debugDescription)")
+        guard presentedViewController == controller else { return }
+        dismiss(animated: true, completion: nil)
+    }
+
+    @available(iOS 12.0, *)
+    func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
+        NSLog("cancelled")
+        guard presentedViewController == controller else { return }
+        dismiss(animated: true, completion: nil)
+    }
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -62,6 +77,16 @@ class FetchDevicesViewController: UIViewController {
             // save device names to vocabulary
             let deviceNameSet = NSOrderedSet(array: devices.map { INSpeakableString(spokenPhrase: $0.name) })
             INVocabulary.shared().setVocabulary(deviceNameSet, of: .contactName)
+
+            if #available(iOS 12.0, *) {
+                let findDeviceIntent = FindDeviceIntent()
+                findDeviceIntent.deviceName = UIDevice.current.name
+                if let shortcut = INShortcut(intent: findDeviceIntent) {
+                    DispatchQueue.main.async {
+                        INVoiceShortcutCenter.shared.setShortcutSuggestions([shortcut])
+                    }
+                }
+            }
         }
 
         operationQueue.addOperation(fetchOperation)

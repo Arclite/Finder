@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0444C8BB20D3940E00036A8F /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0444C8BA20D3940E00036A8F /* Intents.intentdefinition */; };
+		0444C8BC20D3940E00036A8F /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0444C8BA20D3940E00036A8F /* Intents.intentdefinition */; };
 		0467BCBA2078C8140054D069 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467BCB92078C8140054D069 /* IntentHandler.swift */; };
 		0467BCBE2078C8140054D069 /* Intent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0467BCB72078C8140054D069 /* Intent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0467BCC32078C9DD0054D069 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346232C3CDAD43E90850DE0C /* Finder.swift */; };
@@ -66,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0444C8BA20D3940E00036A8F /* Intents.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = SOURCE_ROOT; };
 		0467BCB72078C8140054D069 /* Intent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Intent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0467BCB92078C8140054D069 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		0467BCBB2078C8140054D069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 		04F71CEE2078A1DD00B693D6 /* Finder */ = {
 			isa = PBXGroup;
 			children = (
+				0444C8BA20D3940E00036A8F /* Intents.intentdefinition */,
 				04F71CEF2078A1DD00B693D6 /* AppDelegate.swift */,
 				04F71CF12078A1DD00B693D6 /* AppViewController.swift */,
 				34623E72BF059440EC49C8AC /* Networking */,
@@ -347,6 +351,7 @@
 				0467BCC52078C9E10054D069 /* FetchDevicesOperation.swift in Sources */,
 				0467BCBA2078C8140054D069 /* IntentHandler.swift in Sources */,
 				0467BCC42078C9E10054D069 /* LoginOperation.swift in Sources */,
+				0444C8BC20D3940E00036A8F /* Intents.intentdefinition in Sources */,
 				0467BCC72078CA0F0054D069 /* Device.swift in Sources */,
 				0467BCC62078C9E10054D069 /* AlertOperation.swift in Sources */,
 				0467BCC32078C9DD0054D069 /* Finder.swift in Sources */,
@@ -359,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0444C8BB20D3940E00036A8F /* Intents.intentdefinition in Sources */,
 				04F71CF22078A1DD00B693D6 /* AppViewController.swift in Sources */,
 				04F71CF02078A1DD00B693D6 /* AppDelegate.swift in Sources */,
 				346231915DEFA12AF6D9E6D7 /* Finder.swift in Sources */,
